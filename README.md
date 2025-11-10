@@ -2,6 +2,8 @@
 
 **AstroCal** es una aplicación web moderna, interactiva y responsiva diseñada para el seguimiento del consumo diario de calorías. La app permite a los usuarios registrarse, calcular su meta calórica diaria personalizada y llevar un registro detallado de los alimentos que consumen.
 
+DEMO: https://contador-de-calorias-astro-cal.vercel.app
+
 El proyecto está construido como una *Single Page Application (SPA)* utilizando **React**, **TypeScript**, y **Tailwind CSS**.
 ---
 
