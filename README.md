@@ -1,73 +1,73 @@
-# Welcome to your Lovable project
+# AstroCal - Contador de Calorías
 
-## Project info
+**AstroCal** es una aplicación web moderna, interactiva y responsiva diseñada para el seguimiento del consumo diario de calorías. La app permite a los usuarios registrarse, calcular su meta calórica diaria personalizada y llevar un registro detallado de los alimentos que consumen.
 
-**URL**: https://lovable.dev/projects/c53dfc4b-fb1f-4058-a1ef-b30860e4e519
+El proyecto está construido como una *Single Page Application (SPA)* utilizando **React**, **TypeScript**, y **Tailwind CSS**.
+---
 
-## How can I edit this code?
+## ✨ Características Principales
 
-There are several ways of editing your application.
+* **Autenticación de Usuarios:** Sistema de registro y login persistente (guardado en `localStorage`).
+* **Cálculo de Meta Calórica:** Aplica la fórmula de Mifflin-St Jeor para calcular el TDEE (Gasto Energético Diario Total) basado en el perfil del usuario.
+* **Base de Datos de Alimentos:** Utiliza el **Sistema Mexicano de Alimentos Equivalentes (SMAE)** como base de datos.
+* **Dashboard Interactivo:** Gráfico de progreso circular, lista de ingesta diaria y un potente buscador de alimentos.
+* **Buscador Avanzado:** Permite filtrar alimentos por nombre, categoría y rango de calorías.
+* **Historial y Gráficos:** Visualiza el consumo de los últimos 5 días con gráficos de barras y líneas.
+* **Exportación a PDF:** Genera un reporte PDF del consumo del día.
+* **Tema Claro/Oscuro:** Soporte completo para cambiar de tema.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c53dfc4b-fb1f-4058-a1ef-b30860e4e519) and start prompting.
+## 🛠️ Tecnologías Utilizadas
 
-Changes made via Lovable will be committed automatically to this repo.
+* **Front-end:** React 18+
+* **Lenguaje:** TypeScript
+* **Build Tool:** Vite
+* **Estilos:** Tailwind CSS (con `shadcn/ui`)
+* **Gráficos:** Recharts
+* **Generación de PDF:** jsPDF & jspdf-autotable
+* **Notificaciones:** Sonner
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🏁 Cómo Ejecutar el Proyecto Localmente
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Sigue estos sencillos pasos para correr la aplicación en tu máquina local.
 
-Follow these steps:
+### Prerrequisitos
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Asegúrate de tener **Node.js** (versión 18.x o superior) instalado en tu sistema.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Pasos de Instalación
 
-# Step 3: Install the necessary dependencies.
-npm i
+1.  **Descargar el Proyecto**
+    * Ve a la página principal del repositorio en GitHub.
+    * Haz clic en el botón verde `<> Code`.
+    * Selecciona **"Download ZIP"**.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+2.  **Descomprimir el Archivo**
+    * Encuentra el archivo `.zip` descargado (ej. `AstroCal-main.zip`).
+    * Haz clic derecho y selecciona "Extraer todo..." o usa tu programa preferido.
 
-**Edit a file directly in GitHub**
+3.  **Abrir la Terminal**
+    * Abre la carpeta que acabas de descomprimir (ej. `AstroCal-main`).
+    * Abre una terminal o símbolo del sistema (CMD) directamente en esta carpeta.
+    *(Tip: En Windows, puedes escribir `cmd` en la barra de direcciones de la carpeta y presionar Enter)*.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+4.  **Instalar Dependencias**
+    * Una vez en la terminal, ejecuta el siguiente comando para instalar todos los paquetes necesarios:
 
-**Use GitHub Codespaces**
+    ```bash
+    npm install
+    ```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+5.  **Correr la Aplicación**
+    * Después de que la instalación se complete, ejecuta el siguiente comando para iniciar el servidor de desarrollo:
 
-## What technologies are used for this project?
+    ```bash
+    npm run dev
+    ```
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/c53dfc4b-fb1f-4058-a1ef-b30860e4e519) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+6.  **¡Listo!**
+    * La terminal te mostrará una URL local (usualmente `http://localhost:5173`).
+    * Abre esa URL en tu navegador para ver la aplicación funcionando.
