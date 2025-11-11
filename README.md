@@ -1,75 +1,102 @@
-# AstroCal - Contador de Calorías
+# AstroCal · Contador de Calorías
 
-**AstroCal** es una aplicación web moderna, interactiva y responsiva diseñada para el seguimiento del consumo diario de calorías. La app permite a los usuarios registrarse, calcular su meta calórica diaria personalizada y llevar un registro detallado de los alimentos que consumen.
+Aplicación web moderna para estimar y monitorear el consumo calórico diario de manera sencilla. AstroCal permite crear un perfil nutricional personalizado, registrar alimentos de una base de datos basada en el Sistema Mexicano de Alimentos Equivalentes (SMAE) y visualizar el progreso frente a la meta diaria.
 
-DEMO: https://contador-de-calorias-astro-cal.vercel.app
+> **Demo en producción:** https://contador-de-calorias-astro-cal.vercel.app
 
-El proyecto está construido como una *Single Page Application (SPA)* utilizando **React**, **TypeScript**, y **Tailwind CSS**.
----
+## Tabla de contenidos
+- [Características principales](#características-principales)
+- [Arquitectura y organización](#arquitectura-y-organización)
+- [Tecnologías](#tecnologías)
+- [Guía de instalación y uso](#guía-de-instalación-y-uso)
+- [Comandos disponibles](#comandos-disponibles)
+- [Flujo funcional](#flujo-funcional)
+- [Contribuciones](#contribuciones)
+- [Autor](#autor)
+- [Licencia](#licencia)
 
-## ✨ Características Principales
+## Características principales
+- **Autenticación local:** registro, inicio de sesión y persistencia en `localStorage`.
+- **Meta calórica personalizada:** cálculo automático del TDEE mediante la fórmula de Mifflin-St Jeor.
+- **Catálogo de alimentos SMAE:** búsqueda por nombre, categoría y rango calórico.
+- **Dashboard interactivo:** gráficos, resumen diario y seguimiento de consumo de macronutrientes.
+- **Historial visual:** análisis de los últimos días con gráficos de barras y líneas.
+- **Exportación a PDF:** generación de reportes diarios en un clic.
+- **Tema claro/oscuro:** selector manual con preferencia persistente.
 
-* **Autenticación de Usuarios:** Sistema de registro y login persistente (guardado en `localStorage`).
-* **Cálculo de Meta Calórica:** Aplica la fórmula de Mifflin-St Jeor para calcular el TDEE (Gasto Energético Diario Total) basado en el perfil del usuario.
-* **Base de Datos de Alimentos:** Utiliza el **Sistema Mexicano de Alimentos Equivalentes (SMAE)** como base de datos.
-* **Dashboard Interactivo:** Gráfico de progreso circular, lista de ingesta diaria y un potente buscador de alimentos.
-* **Buscador Avanzado:** Permite filtrar alimentos por nombre, categoría y rango de calorías.
-* **Historial y Gráficos:** Visualiza el consumo de los últimos 5 días con gráficos de barras y líneas.
-* **Exportación a PDF:** Genera un reporte PDF del consumo del día.
-* **Tema Claro/Oscuro:** Soporte completo para cambiar de tema.
+## Arquitectura y organización
+La aplicación está construida como una SPA con React + TypeScript y se estructura en módulos desacoplados:
 
----
+```
+src/
+├─ components/        // UI reutilizable (formularios, tablas, gráficos, etc.)
+├─ contexts/          // Proveedores globales: autenticación y tema
+├─ data/              // Catálogo SMAE y semillas de información
+├─ hooks/             // Hooks personalizados (estado calórico, toasts, breakpoints)
+├─ pages/             // Vistas enrutadas: Login, Registro, Dashboard, Historial
+├─ utils/ & lib/      // Helpers de formato, cálculos y utilidades compartidas
+└─ types/             // Definiciones de tipos y contratos de datos
+```
 
-## 🛠️ Tecnologías Utilizadas
+La capa de estado combina Context API (`AuthContext`, `ThemeContext`) con hooks específicos (`useCalories`) para aislar la lógica de negocio. El enrutamiento se gestiona con `react-router-dom` y se apoya en componentes de `shadcn/ui` para la interfaz.
 
-* **Front-end:** React 18+
-* **Lenguaje:** TypeScript
-* **Build Tool:** Vite
-* **Estilos:** Tailwind CSS (con `shadcn/ui`)
-* **Gráficos:** Recharts
-* **Generación de PDF:** jsPDF & jspdf-autotable
-* **Notificaciones:** Sonner
+## Tecnologías
+- **Framework:** React 18 + Vite
+- **Lenguaje:** TypeScript
+- **Estilos:** Tailwind CSS, shadcn/ui, Radix UI
+- **Gestión de formularios:** React Hook Form + Zod
+- **Gráficos y visualizaciones:** Recharts, react-circular-progressbar
+- **Gestión de estado remoto y caché:** TanStack Query
+- **Generación de reportes:** jsPDF + jspdf-autotable
+- **Notificaciones y feedback:** Sonner
 
----
+## Guía de instalación y uso
+> Requisito previo: Node.js ≥ 18.
 
-## 🏁 Cómo Ejecutar el Proyecto Localmente
+1. **Clona el repositorio**
+   ```bash
+   git clone https://github.com/<tu-usuario>/Contador-de-Calorias-AstroCal.git
+   cd Contador-de-Calorias-AstroCal
+   ```
+2. **Instala las dependencias**
+   ```bash
+   npm install
+   ```
+3. **Inicia el servidor de desarrollo**
+   ```bash
+   npm run dev
+   ```
+4. Abre `http://localhost:5173` en el navegador.
 
-Sigue estos sencillos pasos para correr la aplicación en tu máquina local.
+### Construir para producción
+```bash
+npm run build
+npm run preview
+```
 
-### Prerrequisitos
+## Comandos disponibles
+| Comando         | Descripción                                                     |
+|-----------------|-----------------------------------------------------------------|
+| `npm run dev`   | Levanta el servidor de desarrollo en modo watch.                |
+| `npm run build` | Genera la versión optimizada para producción.                   |
+| `npm run lint`  | Ejecuta ESLint sobre el código fuente.                          |
+| `npm run preview` | Sirve la build de producción para verificación local.        |
 
-Asegúrate de tener **Node.js** (versión 18.x o superior) instalado en tu sistema.
+## Flujo funcional
+1. **Registro y perfilado:** el usuario ingresa datos personales y objetivos; la aplicación calcula el requerimiento calórico objetivo.
+2. **Búsqueda y registro de alimentos:** se consultan alimentos del SMAE, se añaden a la ingesta diaria y se recalcula el progreso.
+3. **Visualización del dashboard:** gráficos circulares y listados muestran calorías consumidas vs. meta, distribución de macros y recomendaciones.
+4. **Historial y reportes:** se accede al historial reciente, con gráficos comparativos y opción de exportar a PDF el resumen diario.
+5. **Personalización:** conmutador de tema claro/oscuro y persistencia automática de preferencias.
 
-### Pasos de Instalación
+## Contribuciones
+Las contribuciones son bienvenidas. Antes de abrir un _pull request_:
+1. Crea un branch descriptivo (`feature/nueva-funcionalidad`).
+2. Asegúrate de pasar `npm run lint` y de incluir la documentación necesaria.
+3. Describe claramente los cambios y adjunta capturas cuando el cambio sea visual.
 
-1.  **Descargar el Proyecto**
-    * Ve a la página principal del repositorio en GitHub.
-    * Haz clic en el botón verde `<> Code`.
-    * Selecciona **"Download ZIP"**.
+## Autor
+**Equipo AstroCal** – contact@astrocal.app
 
-2.  **Descomprimir el Archivo**
-    * Encuentra el archivo `.zip` descargado (ej. `AstroCal-main.zip`).
-    * Haz clic derecho y selecciona "Extraer todo..." o usa tu programa preferido.
-
-3.  **Abrir la Terminal**
-    * Abre la carpeta que acabas de descomprimir (ej. `AstroCal-main`).
-    * Abre una terminal o símbolo del sistema (CMD) directamente en esta carpeta.
-    *(Tip: En Windows, puedes escribir `cmd` en la barra de direcciones de la carpeta y presionar Enter)*.
-
-4.  **Instalar Dependencias**
-    * Una vez en la terminal, ejecuta el siguiente comando para instalar todos los paquetes necesarios:
-
-    ```bash
-    npm install
-    ```
-
-5.  **Correr la Aplicación**
-    * Después de que la instalación se complete, ejecuta el siguiente comando para iniciar el servidor de desarrollo:
-
-    ```bash
-    npm run dev
-    ```
-
-6.  **¡Listo!**
-    * La terminal te mostrará una URL local (usualmente `http://localhost:5173`).
-    * Abre esa URL en tu navegador para ver la aplicación funcionando.
+## Licencia
+Este proyecto se distribuye bajo la licencia **MIT**. Puedes usarlo, modificarlo y redistribuirlo libremente preservando la atribución correspondiente.
