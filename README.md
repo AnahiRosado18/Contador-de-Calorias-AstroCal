@@ -96,7 +96,7 @@ Las contribuciones son bienvenidas. Antes de abrir un _pull request_:
 3. Describe claramente los cambios y adjunta capturas cuando el cambio sea visual.
 
 ## Autor
-**Equipo AstroCal** – contact@astrocal.app
+**AnahiRosado18** – AnahiRosado18
 
 ## Licencia
 Este proyecto se distribuye bajo la licencia **MIT**. Puedes usarlo, modificarlo y redistribuirlo libremente preservando la atribución correspondiente.
