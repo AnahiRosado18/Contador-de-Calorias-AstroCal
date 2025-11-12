@@ -1,0 +1,6 @@
+// este es un archivo que evita el error 404 al recargar en vercel
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
