@@ -174,7 +174,7 @@ export const MEXICAN_FOODS: Food[] = [
   // --- BEBIDAS (Añadidas) ---
   { id: 'b1', name: 'Agua natural', category: 'Bebidas', calories: 0, serving: '1 vaso' },
   { id: 'b2', name: 'Café sin azúcar', category: 'Bebidas', calories: 0, serving: '1 taza' },
-  { id: 'b3', name: 'Té sin azúcar', category: 'Bebidas', calories: 0, serving: '1 taza' },
+  { id: 'b3', name: 'Té sin azúcar', category: 'Bebidas', calories: 2, serving: '1 taza' },
   { id: 'b4', name: 'Horchata (1 vaso)', category: 'Bebidas', calories: 115, serving: '1 vaso (240ml)' },
   { id: 'b5', name: 'Agua de jamaica (endulzada)', category: 'Bebidas', calories: 80, serving: '1 vaso (240ml)' }, // 2 porciones de azúcar
 
