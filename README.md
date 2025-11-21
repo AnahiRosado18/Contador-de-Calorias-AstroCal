@@ -89,14 +89,6 @@ npm run preview
 4. **Historial y reportes:** se accede al historial reciente, con gráficos comparativos y opción de exportar a PDF el resumen diario.
 5. **Personalización:** conmutador de tema claro/oscuro y persistencia automática de preferencias.
 
-## Contribuciones
-Las contribuciones son bienvenidas. Antes de abrir un _pull request_:
-1. Crea un branch descriptivo (`feature/nueva-funcionalidad`).
-2. Asegúrate de pasar `npm run lint` y de incluir la documentación necesaria.
-3. Describe claramente los cambios y adjunta capturas cuando el cambio sea visual.
 
 ## Autor
 **AnahiRosado18** – AnahiRosado18
-
-## Licencia
-Este proyecto se distribuye bajo la licencia **MIT**. Puedes usarlo, modificarlo y redistribuirlo libremente preservando la atribución correspondiente.
