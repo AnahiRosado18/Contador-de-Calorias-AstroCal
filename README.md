@@ -4,6 +4,10 @@ Aplicación web moderna para estimar y monitorear el consumo calórico diario de
 
 > **Demo en producción:** https://contador-de-calorias-astro-cal.vercel.app
 
+> **Documentación del Proyecto:** https://drive.google.com/file/d/1ksC__o0QlD1Tg5pbdUnAvIXC2E5Nfk9u/view?usp=sharing
+
+> **Manual de Usuario:** https://drive.google.com/file/d/1fel-lHY4S4aXgWAqYiUxbVlHF-xjCl-Z/view?usp=sharing
+
 ## Tabla de contenidos
 - [Características principales](#características-principales)
 - [Arquitectura y organización](#arquitectura-y-organización)
@@ -11,9 +15,7 @@ Aplicación web moderna para estimar y monitorear el consumo calórico diario de
 - [Guía de instalación y uso](#guía-de-instalación-y-uso)
 - [Comandos disponibles](#comandos-disponibles)
 - [Flujo funcional](#flujo-funcional)
-- [Contribuciones](#contribuciones)
 - [Autor](#autor)
-- [Licencia](#licencia)
 
 ## Características principales
 - **Autenticación local:** registro, inicio de sesión y persistencia en `localStorage`.
